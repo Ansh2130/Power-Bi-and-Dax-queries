@@ -1,0 +1,31 @@
+
+DAX Formulas Used in Retail Sales Dashboard
+-------------------------------------------
+
+1. Total Orders
+-------------------------------------------
+Total Orders = DISTINCTCOUNT('SampleSuperstore'[Order ID])
+
+2. Profit Margin
+-------------------------------------------
+Profit Margin = DIVIDE(SUM('SampleSuperstore'[Profit]), SUM('SampleSuperstore'[Sales]))
+
+3. Sales per Order
+-------------------------------------------
+Sales per Order = DIVIDE(SUM('SampleSuperstore'[Sales]), DISTINCTCOUNT('SampleSuperstore'[Order ID]))
+
+4. Total Quantity Sold
+-------------------------------------------
+Total Quantity Sold = SUM('SampleSuperstore'[Quantity])
+
+5. Average Discount
+-------------------------------------------
+Average Discount = AVERAGE('SampleSuperstore'[Discount])
+
+6. Negative Profit
+-------------------------------------------
+Negative Profit = CALCULATE(SUM('SampleSuperstore'[Profit]), 'SampleSuperstore'[Profit] < 0)
+
+7. Orders With Discount (optional)
+-------------------------------------------
+Orders With Discount = CALCULATE(DISTINCTCOUNT('SampleSuperstore'[Order ID]), 'SampleSuperstore'[Discount] > 0)
